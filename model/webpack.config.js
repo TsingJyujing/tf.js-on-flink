@@ -1,4 +1,6 @@
 const path = require("path");
+const webpack = require('webpack');
+
 module.exports = {
     entry: './src/app.js',
     output: {
@@ -28,5 +30,8 @@ module.exports = {
             }
         ]
     },
-    mode: 'production'
+    mode: 'production',
+    // externals: {
+    //     'node-fetch': 'fetch'
+    // }
 }

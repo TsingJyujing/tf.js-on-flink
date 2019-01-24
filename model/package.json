@@ -2,9 +2,10 @@
   "name": "tf.js-test",
   "version": "0.1.0",
   "scripts": {
-    "start": "jjs target/ml.bundle.js",
-    "build-dev": "rm -rf ./target && webpack --progress --mode development --config webpack.config.js",
-    "build": "rm -rf ./target && webpack --progress ",
+    "start": "node target/ml.bundle.js",
+    "start-dev": "babel-node src/app.js",
+    "build-dev": "rm -rf ./target/*.js && babel-node src/generate_app.js && webpack --progress --mode development --config webpack.config.js",
+    "build": "rm -rf ./target/*.js && babel-node src/generate_app.js && webpack --progress ",
     "clean": "rm -rf target/*.js"
   },
   "main": "src/app.js",
@@ -13,7 +14,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@tensorflow/tfjs": "^0.14.1",
-    "nashorn-babel-polyfill": "^0.2.7"
+    "node-fetch": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",

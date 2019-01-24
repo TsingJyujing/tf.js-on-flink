@@ -20,7 +20,11 @@
     </properties>
 
     <dependencies>
-
+        <dependency>
+            <groupId>com.github.tsingjyujing</groupId>
+            <artifactId>tof-engine</artifactId>
+            <version>1.0</version>
+        </dependency>
         <dependency>
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_${scala.binary.version}</artifactId>
