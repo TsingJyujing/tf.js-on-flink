@@ -1,8 +1,9 @@
 # Tensorflow on Flink
 
+![](tf&flink.jpg)
 ## Basic Conceptions
 
-It's hard to use Tensorflow in standard JVM, 
+It's hard to use Tensorflow in standard JVM,
 because the Tensorflow on JVM need native libraries and so many other dependencies.
 But there's another way to apply your Tensorflow model on JVM: Use Tensorflow.js and V8 engine.
 
@@ -18,7 +19,7 @@ We will use nashorn instead of V8.
 
 ## Tutorial
 
-For contributing an example of TF.js on Flink, 
+For contributing an example of TF.js on Flink,
 we use [WINE](https://archive.ics.uci.edu/ml/datasets/wine) dataset to build our model and realtime predict system.
 
 ### Step 1: Build your model by Keras
@@ -53,12 +54,12 @@ After compile stage, we get `ml.bundle.js` in `model/target`, and that's our mod
 
 ### Step 3: Write appropriate `IModel` for your input type and return type
 
-We're using DenseMatrix to pass the data and result, 
-if there're more personal requirement like pre-processing, 
+We're using DenseMatrix to pass the data and result,
+if there're more personal requirement like pre-processing,
 you may edit the function `predict` in `src/app_template.js` and rebuild it.
 And you may write your own `IModel` to adapt your personal data type.
 
-### Step 5: Apply your model in the Flink 
+### Step 5: Apply your model in the Flink
 
 Add a rich map function in your streaming computation DAG maybe the most simple way to apply your predict model like the example shows.
 
